@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="#000000">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy Levels"
+        android:textSize="32sp"
+        android:textColor="#007fac"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/privacy_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp">
+
+        <RadioButton
+            android:id="@+id/choice_minimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minimal (Local Only)"
+            android:textColor="#FFFFFF" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="No data ever leaves the device. Some AI features may be limited."
+            android:textColor="#AAAAAA"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/choice_standard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Standard (Recommended)"
+            android:textColor="#FFFFFF"
+            android:checked="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Anonymized diagnostics to improve system performance."
+            android:textColor="#AAAAAA"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+
+</LinearLayout>

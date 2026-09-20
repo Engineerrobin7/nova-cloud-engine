@@ -1,0 +1,9 @@
+# NovaOS Dot-Matrix Boot Animation
+# Width Height FPS
+1080 2400 60
+
+# p Count Pause Path
+# Nova logo build-up
+p 1 0 part0
+# Infinite loop of pulsing "N"
+p 0 0 part1

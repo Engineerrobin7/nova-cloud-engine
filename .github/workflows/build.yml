@@ -1,0 +1,32 @@
+name: InfYNova Proper Cloud Build
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Free Storage Space
+      run: |
+        sudo rm -rf /usr/share/dotnet /etc/mysql /var/lib/mysql /usr/local/lib/android /opt/ghc
+        docker image prune -a -f
+    - name: Setup Compiler Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+    - name: Sync Source Code
+      run: |
+        mkdir -p ~/work && cd ~/work
+        repo init -u https://github.com{{ github.repository }} -b main -m default.xml
+        repo sync -c -j$(nproc) --force-sync --no-clone-bundle --no-tags
+    - name: Start Proper Device Build
+      run: |
+        cd ~/work
+        . build/envsetup.sh
+        lunch nova_hanoip-userdebug || lunch lineage_hanoip-userdebug
+        brunch hanoip -j$(nproc)
+    - name: Upload Final ROM for Distribution
+      uses: actions/upload-artifact@v4
+      with:
+        name: NovaOS-Hanoip-ROM
+        path: ~/work/out/target/product/hanoip/*.zip
+

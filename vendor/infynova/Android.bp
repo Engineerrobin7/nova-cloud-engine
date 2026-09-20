@@ -1,0 +1,6 @@
+prebuilt_etc {
+    name: "nova_slm_weights",
+    src: "assets/models/nova_slm_v1.gguf",
+    relative_install_path: "nova/models",
+    product_specific: true,
+}

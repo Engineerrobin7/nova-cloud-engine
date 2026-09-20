@@ -1,0 +1,14 @@
+# NovaOS Performance Mapping
+# Maps framework properties to kernel sysfs nodes
+
+on property:debug.nova.cpu.boost=1
+    # Trigger performance governor on all cores (simulated path)
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor performance
+    log "NovaSense: Hardware boost activated."
+
+on property:debug.nova.cpu.boost=0
+    # Return to power-efficient governor
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor schedutil
+    log "NovaSense: Hardware boost deactivated."

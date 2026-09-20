@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Nova Dialer"
+        android:textSize="24sp"
+        android:textColor="#007fac"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/dialpad_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textColor="#FFFFFF"
+        android:background="@null"
+        android:hint="Enter number"
+        android:textColorHint="#44FFFFFF"
+        android:inputType="phone" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="3"
+        android:padding="32dp">
+        <!-- Simplified dialpad -->
+        <Button android:text="1" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="2" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="3" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="4" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="5" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="6" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="7" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="8" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <Button android:text="9" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <View android:layout_columnWeight="1" />
+        <Button android:text="0" style="?android:attr/borderlessButtonStyle" android:textColor="#FFFFFF" android:layout_columnWeight="1" />
+        <View android:layout_columnWeight="1" />
+    </GridLayout>
+
+    <ImageButton
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/call_button_bg"
+        android:src="@android:drawable/ic_menu_call" />
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+android_app {
+    name: "NovaFileManager",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    platform_apis: true,
+    certificate: "platform",
+    static_libs: [
+        "androidx.appcompat_appcompat",
+    ],
+}

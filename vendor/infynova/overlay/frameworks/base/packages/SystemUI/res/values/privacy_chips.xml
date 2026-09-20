@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NovaOS Privacy Indicator Colors -->
+    <color name="privacy_chip_mic_color">#ff00ff00</color> <!-- Nova Green -->
+    <color name="privacy_chip_camera_color">#ff00ff00</color>
+    <color name="privacy_chip_location_color">#ff007fac</color> <!-- Nova Blue -->
+</resources>

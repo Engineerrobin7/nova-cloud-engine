@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="nova" fetch="https://github.com" />
+  <default revision="fourteen" remote="nova" sync-j="4" />
+
+  <remote name="motorola-devs" fetch="https://github.com" />
+  <project path="device/motorola/hanoip" name="android_device_motorola_hanoip" remote="motorola-devs" />
+  <project path="kernel/motorola/hanoip" name="android_kernel_motorola_sm6150" remote="motorola-devs" />
+
+  <remote name="muppets" fetch="https://github.com" />
+  <project path="vendor/motorola/hanoip" name="proprietary_vendor_motorola_hanoip" remote="muppets" />
+</manifest>

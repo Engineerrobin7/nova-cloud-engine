@@ -1,0 +1,14 @@
+android_library {
+    name: "ui-customization",
+    srcs: ["src/main/java/**/*.kt"],
+    static_libs: [
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.material3_material3",
+        "kotlinx_coroutines_android",
+        "hilt_android",
+    ],
+    sdk_version: "current",
+    kotlincflags: ["-Xjvm-default=enable"],
+}

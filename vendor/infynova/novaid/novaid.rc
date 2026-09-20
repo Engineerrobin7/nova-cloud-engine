@@ -1,0 +1,6 @@
+service novaid /vendor/bin/novaid
+    class main
+    user system
+    group system readproc
+    capabilities SYS_NICE
+    oneshot
