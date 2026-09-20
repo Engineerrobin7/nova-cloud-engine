@@ -10,12 +10,14 @@ jobs:
         sudo rm -rf /usr/share/dotnet /etc/mysql /var/lib/mysql /usr/local/lib/android /opt/ghc
         docker image prune -a -f
     - name: Setup Compiler Tools & Repo Tool
+      env:
+        DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo apt-get update
-        sudo apt-get install -y git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-        # Google Official Repo Tool New Working Link
+        sudo apt-get update -y || true
+        sudo apt-get install -y --fix-broken git-core gnupg flex bison build-essential zip curl zlib1g-dev libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+        # Google Repository Secure Fetching
         mkdir -p ~/bin
-        curl https://githubusercontent.com > ~/bin/repo
+        curl -sSL https://githubusercontent.com > ~/bin/repo
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/local/bin/repo
     - name: Sync Source Code
